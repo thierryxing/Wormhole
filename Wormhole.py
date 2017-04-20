@@ -22,7 +22,7 @@ def sentry_msg():
             'messageUrl': msg['url']
         }
     }
-    if msg['tag']['url'] is not None:
+    if msg['tags']['url'] is not None:
         requests.post('%s?access_token=%s' % (DINGTALK_HOST, access_token),
                       json=dingtalk_data)
     return 'Success'
